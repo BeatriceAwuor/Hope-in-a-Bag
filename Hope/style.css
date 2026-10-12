@@ -970,39 +970,64 @@ h4 {
    GALLERY
 ===================================================== */
 
-.gallery {
-    padding: 110px 0;
 
-    background: white;
-}
+/* ===== HOPE IN A BAG GALLERY ===== */
 
 .gallery-grid {
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 35px auto;
+    max-width: 1200px;
+    align-items: stretch;
 }
 
 .gallery-item {
+    width: 100%;
+    height: 300px;
     overflow: hidden;
-
-    border-radius: 9px;
-
-    height: 270px;
+    border-radius: 14px;
+    background: #f1f1f1;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    position: relative;
 }
 
 .gallery-item img {
+    display: block;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    transition: 0.4s;
+    object-position: center;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 240px;
+    }
 }
 
 
