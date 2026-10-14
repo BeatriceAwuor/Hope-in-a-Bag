@@ -82,6 +82,32 @@ alert("Thank you for donating $" + selectedAmount);
 
 });
 
+/* Mobile navigation menu */
+const menuToggle = document.querySelector(
+  '.menu-toggle, .hamburger, .nav-toggle, .mobile-menu-btn, .mobile-menu-toggle'
+);
+
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
+
+    const isOpen = navLinks.classList.contains('active');
+
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close the menu after clicking a navigation link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+
 
 
 

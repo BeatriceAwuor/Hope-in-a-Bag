@@ -862,6 +862,69 @@ h4 {
 
     font-weight: 600;
 }
+
+
+/* Responsive supporters section */
+.supporters-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.supporter-card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.supporter-image {
+    max-width: 100%;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .supporters-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .supporters {
+        padding: 55px 0;
+    }
+
+    .supporters-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .supporter-card {
+        width: 100%;
+        padding: 24px 16px;
+        overflow-wrap: break-word;
+    }
+
+    .supporter-image {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 16px;
+    }
+
+    .supporter-card h3 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .supporter-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
 /* =====================================================
    PROGRAMS
 ===================================================== */
@@ -2130,4 +2193,22 @@ h4 {
         text-align: center;
     }
 
+}
+
+@media (max-width: 768px) {
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 24px 16px;
+    background: white;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
 }
