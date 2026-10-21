@@ -1416,29 +1416,34 @@
 
             <!-- CONTACT FORM -->
 
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify>
+     <form class="contact-form" action="https://formsubmit.co/hopeinabag08@gmail.com" method="POST">
 
-  <input type="hidden" name="form-name" value="contact">
+  <!-- Stop spam -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Redirect to your thank you page -->
+  <input type="hidden" name="_next" value="https://hope-in-a-bag.netlify.app/thank-you.html">
+  <!-- Subject of email -->
+  <input type="hidden" name="_subject" value="New Message from Hope in a Bag Website!">
 
   <div class="form-row">
       <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
       </div>
       <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email" required>
+          <label>Your Email</label>
+          <input type="email" name="email" placeholder="Your email" required>
       </div>
   </div>
 
   <div class="form-group">
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+      <label>Subject</label>
+      <input type="text" name="subject" placeholder="How can we help?" required>
   </div>
 
   <div class="form-group">
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+      <label>Your Message</label>
+      <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
   </div>
 
   <button type="submit" class="send-btn">
